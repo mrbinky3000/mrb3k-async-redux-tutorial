@@ -8,8 +8,7 @@ const pkg = require('./package.json');
 const TARGET = process.env.npm_lifecycle_event;
 const PATHS = {
 	app: path.join(__dirname, 'app'),
-	build: path.join(__dirname, 'build'),
-	test: path.join(__dirname, 'tests')
+	build: path.join(__dirname, 'build')
 };
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -125,7 +124,7 @@ if (TARGET === 'test' || TARGET === 'tdd') {
 				{
 					test: /\.jsx?$/,
 					loaders: ['babel?cacheDirectory'],
-					include: PATHS.test
+					include: PATHS.app
 				}
 			]
 		}
